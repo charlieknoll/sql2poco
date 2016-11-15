@@ -11,7 +11,7 @@ namespace Sql2Poco.Tests
     {
         [Fact]
         public void ShouldParseParams() {
-            var sqlScript = new SqlScript(ExampleSql.TestMultiPocoSql);
+            var sqlScript = new SqlScript(ExampleSql.TestMultiPocoSql, "Test");
             Assert.Contains("select @test1", sqlScript.TestingText.ToLower());
         }
     }
