@@ -94,6 +94,7 @@ namespace Sql2Poco
                 if (config.ConnectionStrings.Count > 1)
                 {
                     _connectionStringName = connSection[connSection.Count - 1].Name;
+                    LogToVSOutputWindow("Using last connection string in config file: " + _connectionStringName);
                     result = connSection[connSection.Count - 1].ConnectionString;
                     _providerName = connSection[connSection.Count - 1].ProviderName;
                 }
@@ -215,7 +216,7 @@ namespace Sql2Poco
             if (outputWindowPane == null)
                 outputWindowPane = outputWindow.OutputWindowPanes.Add("Sql2Poco");
 
-            outputWindowPane.OutputString(message);
+            outputWindowPane.OutputString(message + "\r\n");
         }
 
 
