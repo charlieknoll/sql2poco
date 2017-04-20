@@ -76,7 +76,7 @@ namespace Sql2Poco
         }
         public static string StartClass(string className)
         {
-            return string.Format("public static class {0} {{" + nl, className);
+            return string.Format("public static class {0} {{" + nl, className +"Script");
         }
         public static string CloseClass()
         {
